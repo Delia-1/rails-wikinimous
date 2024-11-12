@@ -1,0 +1,18 @@
+<%= link_to "-edit post", edit_article_path(@article) %>
+ <div class="card shadow-lg border-light">
+        <div class="card-header bg-primary text-white">
+          <h2 class="card-title"><%= @article.title %></h2>
+        </div>
+        <div class="card-body">
+          <h5 class="card-subtitle mb-3 text-muted">By <strong>Author</strong> | <%= @article.created_at.strftime("%B %d, %Y") %></h5>
+          <p class="card-text">
+            <%= @article.content %>
+          </p>
+        </div>
+        <div class="card-footer bg-light text-center">
+          <div class="btn btn-danger"><%= link_to "Delete", article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></div><br>
+          <div class=""><%= link_to "Back to Articles", articles_path, class: "btn btn-secondary btn-sm" %></div>
+        </div>
+      </div>
+
+    </div>
